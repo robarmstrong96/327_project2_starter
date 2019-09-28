@@ -23,21 +23,21 @@
 //TODO look in utilities.h for useful functions, particularly strip_unwanted_chars!
 
 //zero out array that tracks words and their occurrences
-using namespace std;
 #include <cstring>
 #include "array_functions.h"
 #include "utilities.h"
+using namespace std;
 const string DELIM = " ";
 
 struct word {
 	string word = DELIM;
 	int references = constants::SUCCESS;
-} array_word[constants::MAX_WORDS];
+} *array_word[constants::MAX_WORDS];
 
 string file_contents;
 
 void clearArray() {
-	array_word.empty();
+	delete [] empty();
 	//array_word = new word[constants::MAX_WORDS];
 }
 
