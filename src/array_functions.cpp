@@ -37,7 +37,7 @@ struct word {
 string file_contents;
 
 void clearArray() {
-	delete [] empty();
+	delete [] array_word;
 	//array_word = new word[constants::MAX_WORDS];
 }
 
@@ -81,8 +81,8 @@ void processLine(std::string &myString) {
 	strcpy(token, myString.c_str());
 	char * temp;
 	temp = strtok(token, DELIM.c_str());
-	string temp = token;
-	processToken(temp);
+	string temp_string = token;
+	processToken(temp_string);
 	free(temp);
 }
 
