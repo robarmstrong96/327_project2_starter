@@ -24,6 +24,7 @@
 
 //zero out array that tracks words and their occurrences
 #include "array_functions.h"
+#include "utilities.h"
 using namespace std;
 
 struct word {
@@ -49,7 +50,7 @@ int getArraySize() {
 
 //get data at a particular location
 std::string getArrayWordAt(int i) {
-	return file_contents.find()
+	//return file_contents.find()
 }
 
 int getArrayWord_NumbOccur_At(int i) {
@@ -84,19 +85,19 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
-	for (i = 0; array_struct[i] != NULL; i++) {
-		if (strcmp(array_struct[i].word, token) == SUCCESS) {
+	for (i = 0; array_struct[i].word != NULL; i++) {
+		if (array_struct[i].word.strcmp(token) == SUCCESS) {
 			array_struct[i].references++;
 			return;
 		}
 	}
-	array_struct[i] = new word{token, 1};
+	array_struct[i] = new word(token, 1);
 }
 
 /*if you are debugging the file must be in the project parent directory
   in this case Project2 with the .project and .cProject files*/
 bool openFile(std::fstream& myfile, const std::string& myFileName) {
-				myfile.open(myFileName.c_str(), mode);
+				myfile.open(myFileName.c_str(),);
 				return true;
     }
 
