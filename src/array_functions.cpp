@@ -25,11 +25,14 @@
 //zero out array that tracks words and their occurrences
 #include "array_functions.h"
 #include "utilities.h"
+CHAR_TO_SEARCH_FOR = "";
+MAX_WORDS = 2100;
+SUCCESS = 0;
 using namespace std;
 
 struct word {
 	string word = CHAR_TO_SEARCH_FOR;
-	int references;
+	int references = SUCCESS;
 };
 
 word array_struct[MAX_WORDS];
