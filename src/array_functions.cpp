@@ -51,10 +51,11 @@ int getArraySize() {
 //get data at a particular location
 std::string getArrayWordordAt(int i) {
 	//return file_contents.find()
+	return "poo";
 }
 
 int getArrayWord_NumbOccur_At(int i) {
-
+	return 0;
 }
 
 /*loop through whole file, one line at a time
@@ -78,7 +79,6 @@ feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	char token[myString.size() + 1];
 	strcpy(token, myString.c_str());
-	char * temp;
 	temp = strtok(token, DELIM.c_str());
 	for (int i = 0; i < strlen(token); i++) {
 		 string temp = token;
@@ -118,7 +118,7 @@ void closeFile(std::fstream& myfile) {
  * 			SUCCESS if all data is written and outputfilename closes OK
  * */
 int writeArraytoFile(const std::string &outputfilename) {
-
+	return 0;
 }
 
 /*
