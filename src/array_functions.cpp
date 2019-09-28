@@ -89,12 +89,14 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
+	cout << "Processing token..." << token << "...";
 	for (i = 0; array_word[i].word != DELIM; i++) {
 		if (array_word[i].word.compare(token) == constants::SUCCESS) {
 			array_word[i].references++;
 			return;
 		}
 	}
+	cout << "Making: " << token << "...";
 	array_word[i] = {token, 1};
 }
 
