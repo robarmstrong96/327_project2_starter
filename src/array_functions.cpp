@@ -49,7 +49,7 @@ int getArraySize() {
 }
 
 //get data at a particular location
-std::string getArrayWorddAt(int i) {
+std::string getArrayWordAt(int i) {
 	//return file_contents.find()
 	return "poo";
 }
