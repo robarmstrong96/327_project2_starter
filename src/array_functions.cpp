@@ -77,7 +77,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (string.getLine(myString,token,CHAR_TO_SEARCH_FOR))) {
+	while (myString.getLine(token,CHAR_TO_SEARCH_FOR))) {
 	   processToken(token);
 	}
 }
