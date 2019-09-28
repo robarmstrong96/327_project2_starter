@@ -25,10 +25,11 @@
 //zero out array that tracks words and their occurrences
 #include "array_functions.h"
 #include "utilities.h"
-const string CHAR_TO_SEARCH_FOR = "";
+using namespace std;
+
+const string CHAR_TO_SEARCH_FOR = " "
 const int MAX_WORDS = 2100;
 const int SUCCESS = 0;
-using namespace std;
 
 struct word {
 	string word = CHAR_TO_SEARCH_FOR;
@@ -47,7 +48,7 @@ void clearArray() {
 //how many unique words are in array
 int getArraySize() {
 	int i;
-	for (i = 0; array_struct[i] != null; i++)
+	for (i = 0; array_struct[i].references != 0; i++)
 	return i;
 }
 
@@ -89,12 +90,12 @@ void processLine(std::string &myString) {
 void processToken(std::string &token) {
 	int i;
 	for (i = 0; array_struct[i].word != CHAR_TO_SEARCH_FOR; i++) {
-		if (array_struct[i].word.strcmp(token) == SUCCESS) {
+		if (strcmp(array_struct[i].word, token) == SUCCESS) {
 			array_struct[i].references++;
 			return;
 		}
 	}
-	array_struct[i] = new word(token, 1);
+	array_struct[i] = new word({token, 1});
 }
 
 /*if you are debugging the file must be in the project parent directory
