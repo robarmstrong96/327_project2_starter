@@ -27,27 +27,27 @@ using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
 
-typedef struct word {
-	string word = constants.CHAR_TO_SEARCH_FOR;
-	int references = constants.SUCCESS;
-} array_struct[constants.MAX_WORDS];
+struct word {
+	string word = constants::CHAR_TO_SEARCH_FOR;
+	int references = constants::SUCCESS;
+} array_word[constants::MAX_WORDS];
 
 string file_contents;
 
 void clearArray() {
-	delete [] array_struct;
-	array_struct = new word array_struct[constants.MAX_WORDS];
+	delete [] array_word;
+	array_word = new word array_word[constants::MAX_WORDS];
 }
 
 //how many unique words are in array
 int getArraySize() {
 	int i;
-	for (i = 0; array_struct[i].references != 0; i++)
+	for (i = 0; array_word[i].references != 0; i++)
 	return i;
 }
 
 //get data at a particular location
-std::string getArrayWordAt(int i) {
+std::string getArrayWordordAt(int i) {
 	//return file_contents.find()
 }
 
@@ -75,7 +75,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (getline(myString,token,constants.CHAR_TO_SEARCH_FOR)) {
+	while (getline(myString,token,constants::CHAR_TO_SEARCH_FOR)) {
 	   processToken(token);
 	}
 }
@@ -83,13 +83,13 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
-	for (i = 0; array_struct[i].word != constants.CHAR_TO_SEARCH_FOR; i++) {
-		if (strcmp(array_struct[i].word, token) == constants.SUCCESS) {
-			array_struct[i].references++;
+	for (i = 0; array_word[i].word != constants::CHAR_TO_SEARCH_FOR; i++) {
+		if (strcmp(array_word[i].word, token) == constants::SUCCESS) {
+			array_word[i].references++;
 			return;
 		}
 	}
-	array_struct[i] = new word({token, 1});
+	array_word[i] = new word({token, 1});
 }
 
 /*if you are debugging the file must be in the project parent directory
