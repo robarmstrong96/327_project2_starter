@@ -37,7 +37,10 @@ struct word {
 string file_contents;
 
 void clearArray() {
-	free(array_word);
+	for (int i = 0; i < array_word.length(); i++) {
+		array_word[i].word = DELIM;
+		array_word[i].references = constants::SUCCESS;
+	}
 	//array_word = new word[constants::MAX_WORDS];
 }
 
