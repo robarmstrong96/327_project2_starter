@@ -75,8 +75,10 @@ bool processFile(std::fstream &myfstream) {
 /*take 1 line and extract all the tokens from it
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
-	string token[];
-	boost::split(token, myString, boost:is_any_of(DELIM));
+	char token[myString.c_str() + 1];
+	strcpy(token, myString.c_str());
+	char * temp;
+	temp = strtok(token, DELIM);
 	for (int i = 0; i < token.size; i++)) {
 	   processToken(token[i]);
 	}
