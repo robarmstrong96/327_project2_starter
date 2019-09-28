@@ -49,7 +49,7 @@ int getArraySize() {
 }
 
 //get data at a particular location
-std::string getArrayWordordAt(int i) {
+std::string getArrayWorddAt(int i) {
 	//return file_contents.find()
 	return "poo";
 }
@@ -101,8 +101,9 @@ void processToken(std::string &token) {
 
 /*if you are debugging the file must be in the project parent directory
   in this case Project2 with the .project and .cProject files*/
-bool openFile(std::fstream& myfile, const std::string& myFileName) {
-				myfile.open(myFileName.c_str(), std::ios_base::in);
+bool openFile(std::fstream& myfile, const std::string& myFileName,
+	std::ios_base::openmode mode = std::ios_base::in) {
+				myfile.open(myFileName.c_str(), mode);
 				return true;
     }
 
