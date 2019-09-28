@@ -26,7 +26,7 @@
 using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
-const string DELIM = " "
+const string DELIM = " ";
 
 struct word {
 	string word = DELIM;
