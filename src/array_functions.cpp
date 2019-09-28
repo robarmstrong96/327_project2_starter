@@ -79,9 +79,10 @@ void processLine(std::string &myString) {
 	char token[myString.size() + 1];
 	strcpy(token, myString.c_str());
 	char * temp;
-	temp = strtok(token, DELIM);
+	temp = strtok(token, DELIM.c_str();
 	for (int i = 0; i < strlen(token); i++) {
-	   processToken(string temp(token[i]));
+		 string temp = token[i];
+	   processToken(temp);
 	}
 }
 
