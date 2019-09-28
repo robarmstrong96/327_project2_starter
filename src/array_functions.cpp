@@ -27,20 +27,16 @@ using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
 
-//const string CHAR_TO_SEARCH_FOR = " "
-//const int MAX_WORDS = 2100;
-//const int SUCCESS = 0;
-
 struct word {
-	string word = CHAR_TO_SEARCH_FOR;
-	int references = SUCCESS;
-} array_struct[MAX_WORDS];
+	string word = constants.CHAR_TO_SEARCH_FOR;
+	int references = constants.SUCCESS;
+} array_struct[constants.MAX_WORDS];
 
 string file_contents;
 
 void clearArray() {
 	delete [] array_struct;
-	array_struct = new word array_struct[MAX_WORDS];
+	array_struct = new word array_struct[constants.MAX_WORDS];
 }
 
 //how many unique words are in array
@@ -79,7 +75,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (getline(myString,token,CHAR_TO_SEARCH_FOR)) {
+	while (getline(myString,token,constants.CHAR_TO_SEARCH_FOR)) {
 	   processToken(token);
 	}
 }
@@ -87,8 +83,8 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
-	for (i = 0; array_struct[i].word != CHAR_TO_SEARCH_FOR; i++) {
-		if (strcmp(array_struct[i].word, token) == SUCCESS) {
+	for (i = 0; array_struct[i].word != constants.CHAR_TO_SEARCH_FOR; i++) {
+		if (strcmp(array_struct[i].word, token) == constants.SUCCESS) {
 			array_struct[i].references++;
 			return;
 		}
