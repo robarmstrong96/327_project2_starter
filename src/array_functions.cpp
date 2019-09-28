@@ -37,7 +37,7 @@ string file_contents;
 
 void clearArray() {
 	delete [] array_word;
-	array_word = new word[constants::MAX_WORDS];
+	//array_word = new word[constants::MAX_WORDS];
 }
 
 //how many unique words are in array
@@ -75,9 +75,9 @@ bool processFile(std::fstream &myfstream) {
 /*take 1 line and extract all the tokens from it
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
-	string token;
-	while (getline(myString,token,DELIM)) {
-	   processToken(token);
+	string token[] = myString.split(DELIM);
+	for (int i = 0; i < token.size; i++)) {
+	   processToken(token[i]);
 	}
 }
 
