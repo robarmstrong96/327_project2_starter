@@ -23,9 +23,9 @@
 //TODO look in utilities.h for useful functions, particularly strip_unwanted_chars!
 
 //zero out array that tracks words and their occurrences
+using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
-using namespace std;
 
 const string CHAR_TO_SEARCH_FOR = " "
 const int MAX_WORDS = 2100;
@@ -34,9 +34,7 @@ const int SUCCESS = 0;
 struct word {
 	string word = CHAR_TO_SEARCH_FOR;
 	int references = SUCCESS;
-};
-
-word array_struct[MAX_WORDS];
+} array_struct[MAX_WORDS];
 
 string file_contents;
 
