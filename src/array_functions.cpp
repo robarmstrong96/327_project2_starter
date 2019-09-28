@@ -79,9 +79,9 @@ void processLine(std::string &myString) {
 	char token[myString.size() + 1];
 	strcpy(token, myString.c_str());
 	char * temp;
-	temp = strtok(token, DELIM.c_str();
+	temp = strtok(token, DELIM.c_str());
 	for (int i = 0; i < strlen(token); i++) {
-		 string temp = token[i];
+		 string temp = token;
 	   processToken(temp);
 	}
 }
@@ -90,7 +90,7 @@ void processLine(std::string &myString) {
 void processToken(std::string &token) {
 	int i;
 	for (i = 0; array_word[i].word != DELIM; i++) {
-		if (strcmp(array_word[i].word, token) == constants::SUCCESS) {
+		if (array_word[i].word.compare(token) == constants::SUCCESS) {
 			array_word[i].references++;
 			return;
 		}
