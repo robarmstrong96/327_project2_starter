@@ -25,9 +25,9 @@
 //zero out array that tracks words and their occurrences
 #include "array_functions.h"
 #include "utilities.h"
-CHAR_TO_SEARCH_FOR = "";
-MAX_WORDS = 2100;
-SUCCESS = 0;
+const string CHAR_TO_SEARCH_FOR = "";
+const int MAX_WORDS = 2100;
+const int SUCCESS = 0;
 using namespace std;
 
 struct word {
