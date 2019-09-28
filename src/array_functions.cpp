@@ -37,7 +37,7 @@ struct word {
 string file_contents;
 
 void clearArray() {
-	for (int i = 0; i < array_word.length(); i++) {
+	for (int i = 0; i < sizeof(array_word); i++) {
 		array_word[i].word = DELIM;
 		array_word[i].references = constants::SUCCESS;
 	}
