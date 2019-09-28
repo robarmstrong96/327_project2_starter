@@ -27,7 +27,7 @@ using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
 
-struct word {
+typedef struct word {
 	string word = constants.CHAR_TO_SEARCH_FOR;
 	int references = constants.SUCCESS;
 } array_struct[constants.MAX_WORDS];
