@@ -28,17 +28,17 @@
 using namespace std;
 
 struct word {
-	string word;
+	string word = CHAR_TO_SEARCH_FOR;
 	int references;
 };
 
-word array_struct[] = new word[MAX_WORDS];
+word array_struct[MAX_WORDS];
 
 string file_contents;
 
 void clearArray() {
 	delete [] array_struct;
-	array_struct = NULL;
+	array_struct = new word array_struct[MAX_WORDS];
 }
 
 //how many unique words are in array
@@ -65,7 +65,7 @@ bool processFile(std::fstream &myfstream) {
 	if(myfstream.is_open()) {
 		string line;
 		while(!myfstream.eof()) {
-			string.getline(myfstream,line);
+			getline(myfstream,line);
 			processLine(line);
 			file_contents += line;
 		}
@@ -77,7 +77,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (myString.getLine(token,CHAR_TO_SEARCH_FOR))) {
+	while (getline(myString,token,CHAR_TO_SEARCH_FOR)) {
 	   processToken(token);
 	}
 }
@@ -85,7 +85,7 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
-	for (i = 0; array_struct[i].word != NULL; i++) {
+	for (i = 0; array_struct[i].word != CHAR_TO_SEARCH_FOR; i++) {
 		if (array_struct[i].word.strcmp(token) == SUCCESS) {
 			array_struct[i].references++;
 			return;
