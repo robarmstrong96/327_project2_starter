@@ -37,7 +37,7 @@ struct word {
 string file_contents;
 
 void clearArray() {
-	delete [] array_word;
+	free(array_word);
 	//array_word = new word[constants::MAX_WORDS];
 }
 
