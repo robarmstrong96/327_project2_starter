@@ -32,7 +32,7 @@ struct word {
 	int references;
 };
 
-word array_struct[] = new word[MAX_WORDS];
+word array_struct[] = new word[utilities.MAX_WORDS];
 
 string file_contents;
 
@@ -97,7 +97,7 @@ void processToken(std::string &token) {
 /*if you are debugging the file must be in the project parent directory
   in this case Project2 with the .project and .cProject files*/
 bool openFile(std::fstream& myfile, const std::string& myFileName) {
-				myfile.open(myFileName.c_str(),);
+				myfile.open(myFileName.c_str(), std::ios_base::in);
 				return true;
     }
 
