@@ -32,7 +32,7 @@ struct word {
 	int references;
 };
 
-word array_struct[] = new word[utilities.MAX_WORDS];
+word array_struct[] = new word[MAX_WORDS];
 
 string file_contents;
 
@@ -65,7 +65,7 @@ bool processFile(std::fstream &myfstream) {
 	if(myfstream.is_open()) {
 		string line;
 		while(!myfstream.eof()) {
-			getline(myfstream,line);
+			string.getline(myfstream,line);
 			processLine(line);
 			file_contents += line;
 		}
@@ -77,7 +77,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (getLine(myString,token,CHAR_TO_SEARCH_FOR))) {
+	while (string.getLine(myString,token,CHAR_TO_SEARCH_FOR))) {
 	   processToken(token);
 	}
 }
