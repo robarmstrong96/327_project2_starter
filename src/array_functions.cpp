@@ -27,9 +27,9 @@ using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
 
-const string CHAR_TO_SEARCH_FOR = " "
-const int MAX_WORDS = 2100;
-const int SUCCESS = 0;
+//const string CHAR_TO_SEARCH_FOR = " "
+//const int MAX_WORDS = 2100;
+//const int SUCCESS = 0;
 
 struct word {
 	string word = CHAR_TO_SEARCH_FOR;
