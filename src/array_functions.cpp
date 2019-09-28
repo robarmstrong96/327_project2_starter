@@ -26,9 +26,10 @@
 using namespace std;
 #include "array_functions.h"
 #include "utilities.h"
+const string DELIM = " "
 
 struct word {
-	string word = constants::CHAR_TO_SEARCH_FOR;
+	string word = DELIM;
 	int references = constants::SUCCESS;
 } array_word[constants::MAX_WORDS];
 
@@ -36,7 +37,7 @@ string file_contents;
 
 void clearArray() {
 	delete [] array_word;
-	array_word = new word array_word[constants::MAX_WORDS];
+	array_word = new word[constants::MAX_WORDS];
 }
 
 //how many unique words are in array
@@ -75,7 +76,7 @@ bool processFile(std::fstream &myfstream) {
 feed each token to processToken for recording*/
 void processLine(std::string &myString) {
 	string token;
-	while (getline(myString,token,constants::CHAR_TO_SEARCH_FOR)) {
+	while (getline(myString,token,DELIM)) {
 	   processToken(token);
 	}
 }
@@ -83,7 +84,7 @@ void processLine(std::string &myString) {
 /*Keep track of how many times each token seen*/
 void processToken(std::string &token) {
 	int i;
-	for (i = 0; array_word[i].word != constants::CHAR_TO_SEARCH_FOR; i++) {
+	for (i = 0; array_word[i].word != DELIM; i++) {
 		if (strcmp(array_word[i].word, token) == constants::SUCCESS) {
 			array_word[i].references++;
 			return;
