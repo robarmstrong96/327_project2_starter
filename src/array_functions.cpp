@@ -32,7 +32,7 @@ const string DELIM = " ";
 struct word {
 	string word = DELIM;
 	int references = constants::SUCCESS;
-} *array_word[constants::MAX_WORDS];
+} array_word[constants::MAX_WORDS];
 
 string file_contents;
 
@@ -81,10 +81,9 @@ void processLine(std::string &myString) {
 	strcpy(token, myString.c_str());
 	char * temp;
 	temp = strtok(token, DELIM.c_str());
-	for (int i = 0; i < strlen(token); i++) {
-		 string temp = token;
-	   processToken(temp);
-	}
+	string temp = token;
+	processToken(temp);
+	free(temp);
 }
 
 /*Keep track of how many times each token seen*/
