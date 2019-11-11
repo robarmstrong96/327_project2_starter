@@ -153,7 +153,9 @@ void sortArray(constants::sortOrder so) {
 		case constants::ASCENDING:
 			for (int i = 0; i < getArraySize() - 1; i++) {
 				for (int j = 0; j < getArraySize() - i - 1; j++) {
-					if(array_word[j].word > array_word[j + 1].word) {
+					string temp_one = array_word[j].word,	temp_two = array_word[j + 1].word;
+					toUpper(temp_one), toUpper(temp_two);
+					if (temp_one > temp_two) {
 						word_struct temp = array_word[j];
 						array_word[j] = array_word[j + 1];
 						array_word[j + 1] = temp;
@@ -164,7 +166,9 @@ void sortArray(constants::sortOrder so) {
 		case constants::DESCENDING:
 			for (int i = 0; i < getArraySize() - 1; i++) {
 				for (int j = 0; j < getArraySize() - i - 1; j++) {
-					if(array_word[j].word < array_word[j + 1].word) {
+					string temp_one = array_word[j].word,	temp_two = array_word[j + 1].word;
+					toUpper(temp_one), toUpper(temp_two);
+					if(temp_one < temp_two) {
 						word_struct temp = array_word[j];
 						array_word[j] = array_word[j + 1];
 						array_word[j + 1] = temp;
